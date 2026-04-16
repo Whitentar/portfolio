@@ -117,7 +117,12 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   input[type="number"]::-webkit-inner-spin-button,
@@ -147,4 +152,3 @@
   border-radius: 5px;
   background: var(--muted);
 }
-
