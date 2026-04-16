@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ZardCardComponent } from "./shared/components/card";
 
 @Component({
   selector: 'app-root',
