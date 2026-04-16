@@ -1,6 +1,10 @@
 <div class="relative min-h-screen overflow-x-hidden scroll-smooth bg-gradient-to-b from-background via-background to-primary/5">
-    <div aria-hidden="true"
-        class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[34rem] bg-[radial-gradient(circle_at_20%_20%,theme(colors.primary/15),transparent_45%),radial-gradient(circle_at_80%_10%,theme(colors.chart-2/20),transparent_45%)]">
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        <div class="portfolio-bg-halo"></div>
+        <div class="portfolio-bg-aurora"></div>
+        <div class="portfolio-bg-aurora portfolio-bg-aurora-secondary"></div>
+        <div class="portfolio-bg-icons"></div>
+        <div class="portfolio-bg-sheen"></div>
     </div>
 
     <header class="sticky top-0 z-50 border-b border-border/60 bg-background/75 backdrop-blur-xl">
@@ -21,7 +25,7 @@
         </nav>
     </header>
 
-    <main class="mx-auto flex w-full max-w-6xl flex-col gap-20 px-4 py-12 sm:px-6 sm:py-16">
+    <main class="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-20 px-4 py-12 sm:px-6 sm:py-16">
         <section id="hero" class="grid items-center gap-10 pt-6 md:grid-cols-2 md:pt-10">
             <div class="order-2 md:order-1">
                 <span

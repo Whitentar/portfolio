@@ -6,4 +6,5 @@ import { ZardCardComponent } from "@/shared/components/card";
   imports: [ZardCardComponent],
   templateUrl: './home.html'
 })
-export class Home { }
+export class Home {
+}
