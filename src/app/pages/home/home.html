@@ -75,7 +75,11 @@
         </section>
 
         <section id="about">
-            <z-card title="About me" class="about-card border-border/70 bg-card/90 shadow-lg">
+            <div class="section-heading-group">
+                <h2 class="section-heading"><span class="section-heading-text">About</span></h2>
+            </div>
+
+            <z-card class="about-card border-border/70 bg-card/90 shadow-lg">
                 <div class="about-layout">
                     <article class="about-story">
                         <p class="about-kicker">My background</p>
@@ -90,10 +94,14 @@
                     <aside class="about-focus-panel">
                         <p class="text-xs uppercase tracking-[0.18em] text-muted-foreground">Currently focused on</p>
                         <div class="about-tech-cloud about-focus-cloud">
-                            <span class="about-tech-chip about-tech-chip-focus tech-java"><span class="about-tech-icon">☕</span>Java</span>
-                            <span class="about-tech-chip about-tech-chip-focus tech-spring"><span class="about-tech-icon">🍃</span>Spring Boot</span>
-                            <span class="about-tech-chip about-tech-chip-focus tech-angular"><span class="about-tech-icon">A</span>Angular</span>
-                            <span class="about-tech-chip about-tech-chip-focus tech-typescript"><span class="about-tech-icon">TS</span>TypeScript</span>
+                            <span class="about-tech-chip about-tech-chip-focus tech-java"><span
+                                    class="about-tech-icon">☕</span>Java</span>
+                            <span class="about-tech-chip about-tech-chip-focus tech-spring"><span
+                                    class="about-tech-icon">🍃</span>Spring Boot</span>
+                            <span class="about-tech-chip about-tech-chip-focus tech-angular"><span
+                                    class="about-tech-icon">A</span>Angular</span>
+                            <span class="about-tech-chip about-tech-chip-focus tech-typescript"><span
+                                    class="about-tech-icon">TS</span>TypeScript</span>
                         </div>
                     </aside>
                 </div>
@@ -102,53 +110,62 @@
                     <p class="about-kicker">Technologies I work with</p>
                     <div class="about-tech-cloud">
                         <span class="about-tech-chip tech-java"><span class="about-tech-icon">☕</span>Java</span>
-                        <span class="about-tech-chip tech-spring"><span class="about-tech-icon">🍃</span>Spring Boot</span>
-                        <span class="about-tech-chip tech-keycloak"><span class="about-tech-icon">🔐</span>Keycloak</span>
+                        <span class="about-tech-chip tech-spring"><span class="about-tech-icon">🍃</span>Spring
+                            Boot</span>
+                        <span class="about-tech-chip tech-keycloak"><span
+                                class="about-tech-icon">🔐</span>Keycloak</span>
                         <span class="about-tech-chip tech-csharp"><span class="about-tech-icon">#</span>C#</span>
-                        <span class="about-tech-chip tech-dotnet"><span class="about-tech-icon">.N</span>ASP.NET Core</span>
+                        <span class="about-tech-chip tech-dotnet"><span class="about-tech-icon">.N</span>ASP.NET
+                            Core</span>
                         <span class="about-tech-chip tech-react"><span class="about-tech-icon">⚛</span>React</span>
                         <span class="about-tech-chip tech-angular"><span class="about-tech-icon">A</span>Angular</span>
-                        <span class="about-tech-chip tech-typescript"><span class="about-tech-icon">TS</span>TypeScript</span>
-                        <span class="about-tech-chip tech-postgres"><span class="about-tech-icon">🐘</span>PostgreSQL</span>
+                        <span class="about-tech-chip tech-typescript"><span
+                                class="about-tech-icon">TS</span>TypeScript</span>
+                        <span class="about-tech-chip tech-postgres"><span
+                                class="about-tech-icon">🐘</span>PostgreSQL</span>
                         <span class="about-tech-chip tech-swift"><span class="about-tech-icon">🕊</span>Swift</span>
                     </div>
                 </div>
             </z-card>
         </section>
 
-        <section id="projects" class="grid gap-5 lg:grid-cols-3">
-            <z-card title="Core skills" class="border-border/70 bg-card/90 shadow-lg lg:col-span-1">
-                <div class="space-y-2 text-sm">
-                    <p class="rounded-lg border border-border bg-muted/50 px-3 py-2">C# • ASP.NET Core</p>
-                    <p class="rounded-lg border border-border bg-muted/50 px-3 py-2">TypeScript • React • Angular</p>
-                    <p class="rounded-lg border border-border bg-muted/50 px-3 py-2">Java • Spring Boot • Keycloak</p>
-                    <p class="rounded-lg border border-border bg-muted/50 px-3 py-2">Python • Tailwind • PostgreSQL</p>
-                </div>
-            </z-card>
+        <section id="projects">
+            <div class="section-heading-group">
+                <h2 class="section-heading"><span class="section-heading-text">Projects</span></h2>
+            </div>
 
-            <z-card title="Featured projects" class="border-border/70 bg-card/90 shadow-lg lg:col-span-2">
-                <div class="grid gap-4 sm:grid-cols-2">
-                    <article class="rounded-xl border border-border bg-muted/40 p-4">
-                        <h3 class="font-semibold">Performance Cycle Tool</h3>
-                        <p class="mt-2 text-sm text-muted-foreground">Internal platform work at The Beehive using Java
-                            and Angular.</p>
+            <z-card class="border-border/70 bg-card/90 shadow-lg projects-card">
+
+                <div class="projects-grid">
+                    @for (project of projects; track project.title) {
+                    <article class="project-showcase">
+                        <div class="project-thumbnail-wrap">
+                            <img [src]="project.thumbnail ?? sharedProjectThumbnail" [alt]="project.title + ' thumbnail'" loading="lazy"
+                                class="project-thumbnail" />
+                        </div>
+
+                        <div class="project-content">
+                            <h3 class="project-title">{{ project.title }}</h3>
+                            <p class="project-summary">{{ project.summary }}</p>
+
+                            <div class="project-tags">
+                                @for (tag of project.tags; track tag) {
+                                <span class="project-tag">{{ tag }}</span>
+                                }
+                            </div>
+                        </div>
                     </article>
-                    <article class="rounded-xl border border-border bg-muted/40 p-4">
-                        <h3 class="font-semibold">Healthcare Software Contributions</h3>
-                        <p class="mt-2 text-sm text-muted-foreground">Contributed to HiX at ChipSoft with C# and
-                            .NET.</p>
-                    </article>
-                    <article class="rounded-xl border border-border bg-muted/40 p-4 sm:col-span-2">
-                        <h3 class="font-semibold">Personal Projects</h3>
-                        <p class="mt-2 text-sm text-muted-foreground">Use this section for your best projects with
-                            GitHub links, live demos, and a short impact-focused summary.</p>
-                    </article>
+                    }
                 </div>
             </z-card>
         </section>
 
         <section id="experience">
-            <z-card title="Experience" class="border-border/70 bg-card/90 shadow-lg">
+            <div class="section-heading-group">
+                <h2 class="section-heading"><span class="section-heading-text">Experience</span></h2>
+            </div>
+
+            <z-card class="border-border/70 bg-card/90 shadow-lg">
                 <div class="grid gap-4 sm:grid-cols-2">
                     <article class="rounded-xl border border-border bg-muted/40 p-4">
                         <h3 class="font-semibold">Intern Software Developer — The Beehive</h3>
@@ -180,7 +197,11 @@
         </section>
 
         <section id="education">
-            <z-card title="Education" class="border-border/70 bg-card/90 shadow-lg">
+            <div class="section-heading-group">
+                <h2 class="section-heading"><span class="section-heading-text">Education</span></h2>
+            </div>
+
+            <z-card class="border-border/70 bg-card/90 shadow-lg">
                 <div class="rounded-xl border border-border bg-muted/40 p-4">
                     <p class="font-semibold">Karel de Grote-Hogeschool</p>
                     <p class="mt-2 text-sm text-muted-foreground">

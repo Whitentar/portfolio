@@ -459,10 +459,129 @@
   --chip-color: #f46f37;
 }
 
+.projects-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-heading-group {
+  margin-bottom: 0.85rem;
+}
+
+.section-heading {
+  font-size: clamp(1.7rem, 3.2vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.section-heading-text {
+  color: color-mix(in oklab, var(--foreground) 92%, white 8%);
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .section-heading-text {
+    background-image: linear-gradient(
+      92deg,
+      color-mix(in oklab, var(--foreground) 94%, white 6%) 0%,
+      color-mix(in oklab, #3aff90 18%, var(--foreground)) 58%,
+      color-mix(in oklab, var(--foreground) 94%, white 6%) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+
+.projects-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.project-showcase {
+  border: 1px solid color-mix(in oklab, var(--border) 84%, transparent);
+  background: linear-gradient(
+      150deg,
+      color-mix(in oklab, var(--chart-2) 10%, transparent),
+      transparent 48%
+    ),
+    color-mix(in oklab, var(--card) 90%, transparent);
+  border-radius: calc(var(--radius) + 8px);
+  overflow: hidden;
+  box-shadow: 0 14px 34px -28px color-mix(in oklab, black 45%, transparent);
+  transition: transform 180ms ease, border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.project-showcase:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--chart-2) 40%, var(--border));
+  box-shadow: 0 20px 38px -24px color-mix(in oklab, black 62%, transparent);
+}
+
+.project-thumbnail-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 86%, transparent);
+  background: color-mix(in oklab, var(--muted) 82%, transparent);
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 0.95rem;
+}
+
+.project-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.project-summary {
+  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--muted-foreground);
+}
+
+.project-tags {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.project-tag {
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--chart-2) 34%, var(--border));
+  background: color-mix(in oklab, var(--chart-2) 12%, transparent);
+  padding: 0.28rem 0.58rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  color: color-mix(in oklab, var(--foreground) 84%, white 16%);
+}
+
 @media (min-width: 768px) {
   .about-layout {
     grid-template-columns: 2fr 1fr;
     align-items: stretch;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
