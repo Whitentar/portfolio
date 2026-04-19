@@ -1,4 +1,5 @@
-<div class="relative min-h-screen overflow-x-hidden scroll-smooth bg-gradient-to-b from-background via-background to-primary/5">
+<div
+    class="relative min-h-screen overflow-x-hidden scroll-smooth bg-gradient-to-b from-background via-background to-primary/5">
     <div aria-hidden="true" class="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         <div class="portfolio-bg-halo"></div>
         <div class="portfolio-bg-aurora"></div>
@@ -37,8 +38,11 @@
                         Developer</span>
                 </h1>
                 <p class="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-                    I build performant web applications with Angular, Spring Boot, and .NET. Currently interning at The
-                    Beehive and teaching programming at CodeFever.
+                    I build modern, practical software experiences with languages like <strong> Java </strong>, <strong>
+                        C# </strong>, and
+                    <strong>TypeScript</strong>.
+                    Currently
+                    interning at <strong> The Beehive </strong> and teaching programming at <strong>CodeFever</strong>.
                 </p>
 
                 <div class="mt-8 flex flex-wrap items-center gap-3">
@@ -58,9 +62,11 @@
             </div>
 
             <div class="order-1 md:order-2">
-                <div class="relative mx-auto aspect-[4/5] max-w-sm overflow-hidden rounded-3xl border border-border/70 bg-card shadow-xl">
+                <div
+                    class="relative mx-auto aspect-[4/5] max-w-sm overflow-hidden rounded-3xl border border-border/70 bg-card shadow-xl">
                     <img src="assets/images/headshot.png" alt="Nichola headshot" class="h-full w-full object-cover" />
-                    <div class="absolute inset-x-4 bottom-4 rounded-xl border border-white/20 bg-black/45 p-3 text-white backdrop-blur">
+                    <div
+                        class="absolute inset-x-4 bottom-4 rounded-xl border border-white/20 bg-black/45 p-3 text-white backdrop-blur">
                         <p class="text-xs uppercase tracking-[0.2em] text-white/75">Based in Antwerp</p>
                         <p class="mt-1 text-sm font-semibold">Building modern, practical software experiences</p>
                     </div>
@@ -69,20 +75,42 @@
         </section>
 
         <section id="about">
-            <z-card title="About me" class="border-border/70 bg-card/90 shadow-lg">
-                <div class="grid gap-6 md:grid-cols-3 md:items-start">
-                    <p class="md:col-span-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                        What started with a simple game called "Robbie Konijn" for toddlers became a lifelong passion
-                        for technology. I'm a Computer Science student at KdG University in Antwerp (Application
-                        Development), teaching programming to children and building web applications.
-                    </p>
-                    <div class="rounded-xl border border-border bg-muted/40 p-4">
+            <z-card title="About me" class="about-card border-border/70 bg-card/90 shadow-lg">
+                <div class="about-layout">
+                    <article class="about-story">
+                        <p class="about-kicker">My background</p>
+                        <p class="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                            What started with a simple game called "Robbie Konijn" for toddlers became a lifelong
+                            passion for technology. I'm a final year Computer Science student at KdG University in
+                            Antwerp (Application Development), in my free time I teach programming to children at
+                            CodeFever and work on personal projects.
+                        </p>
+                    </article>
+
+                    <aside class="about-focus-panel">
                         <p class="text-xs uppercase tracking-[0.18em] text-muted-foreground">Currently focused on</p>
-                        <ul class="mt-3 space-y-2 text-sm">
-                            <li>Angular frontends</li>
-                            <li>Java & .NET backends</li>
-                            <li>Clean, maintainable architecture</li>
-                        </ul>
+                        <div class="about-tech-cloud about-focus-cloud">
+                            <span class="about-tech-chip about-tech-chip-focus tech-java"><span class="about-tech-icon">☕</span>Java</span>
+                            <span class="about-tech-chip about-tech-chip-focus tech-spring"><span class="about-tech-icon">🍃</span>Spring Boot</span>
+                            <span class="about-tech-chip about-tech-chip-focus tech-angular"><span class="about-tech-icon">A</span>Angular</span>
+                            <span class="about-tech-chip about-tech-chip-focus tech-typescript"><span class="about-tech-icon">TS</span>TypeScript</span>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="about-languages mt-6">
+                    <p class="about-kicker">Technologies I work with</p>
+                    <div class="about-tech-cloud">
+                        <span class="about-tech-chip tech-java"><span class="about-tech-icon">☕</span>Java</span>
+                        <span class="about-tech-chip tech-spring"><span class="about-tech-icon">🍃</span>Spring Boot</span>
+                        <span class="about-tech-chip tech-keycloak"><span class="about-tech-icon">🔐</span>Keycloak</span>
+                        <span class="about-tech-chip tech-csharp"><span class="about-tech-icon">#</span>C#</span>
+                        <span class="about-tech-chip tech-dotnet"><span class="about-tech-icon">.N</span>ASP.NET Core</span>
+                        <span class="about-tech-chip tech-react"><span class="about-tech-icon">⚛</span>React</span>
+                        <span class="about-tech-chip tech-angular"><span class="about-tech-icon">A</span>Angular</span>
+                        <span class="about-tech-chip tech-typescript"><span class="about-tech-icon">TS</span>TypeScript</span>
+                        <span class="about-tech-chip tech-postgres"><span class="about-tech-icon">🐘</span>PostgreSQL</span>
+                        <span class="about-tech-chip tech-swift"><span class="about-tech-icon">🕊</span>Swift</span>
                     </div>
                 </div>
             </z-card>

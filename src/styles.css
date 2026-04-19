@@ -307,6 +307,165 @@
   animation: portfolioPatternMove 18s ease-in-out infinite;
 }
 
+.about-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card::before {
+  content: none;
+}
+
+.about-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.about-story {
+  border: 1px solid color-mix(in oklab, var(--border) 96%, transparent);
+  background: var(--card);
+  border-radius: calc(var(--radius) + 6px);
+  padding: 1rem;
+}
+
+.about-focus-panel {
+  border: 1px solid color-mix(in oklab, var(--border) 82%, transparent);
+  background: linear-gradient(
+      165deg,
+      color-mix(in oklab, var(--chart-1) 14%, transparent),
+      transparent 42%
+  ),
+    color-mix(in oklab, var(--card) 80%, transparent);
+  border-radius: calc(var(--radius) + 6px);
+  padding: 1rem;
+}
+
+.about-kicker {
+  margin-bottom: 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--muted-foreground) 88%, white 12%);
+}
+
+.about-languages {
+  position: relative;
+  z-index: 1;
+  border: 1px solid color-mix(in oklab, var(--border) 88%, transparent);
+  border-radius: calc(var(--radius) + 6px);
+  background: color-mix(in oklab, var(--card) 72%, transparent);
+  padding: 1rem;
+}
+
+.about-tech-cloud {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.about-focus-cloud {
+  margin-top: 0.68rem;
+}
+
+.about-tech-chip {
+  --chip-color: var(--chart-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--chip-color) 36%, var(--border));
+  background: linear-gradient(
+      145deg,
+      color-mix(in oklab, var(--chip-color) 18%, transparent),
+      transparent 55%
+    ),
+    color-mix(in oklab, var(--card) 90%, transparent);
+  padding: 0.34rem 0.7rem 0.34rem 0.42rem;
+  font-size: 0.77rem;
+  font-weight: 600;
+  line-height: 1;
+  color: color-mix(in oklab, var(--foreground) 86%, white 14%);
+  white-space: nowrap;
+}
+
+.about-tech-chip-focus {
+  border-color: color-mix(in oklab, var(--chip-color) 52%, var(--border));
+  background: linear-gradient(
+      145deg,
+      color-mix(in oklab, var(--chip-color) 26%, transparent),
+      transparent 50%
+    ),
+    color-mix(in oklab, var(--card) 92%, transparent);
+}
+
+.about-tech-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.14rem;
+  height: 1.14rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--chip-color) 22%, transparent);
+  color: color-mix(in oklab, var(--chip-color) 72%, var(--foreground));
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.tech-java {
+  --chip-color: #f39a3b;
+}
+
+.tech-spring {
+  --chip-color: #6db33f;
+}
+
+.tech-keycloak {
+  --chip-color: #2a7de1;
+}
+
+.tech-csharp {
+  --chip-color: #7d4fbe;
+}
+
+.tech-dotnet {
+  --chip-color: #6a41cc;
+}
+
+.tech-react {
+  --chip-color: #37c6e8;
+}
+
+.tech-angular {
+  --chip-color: #dd2738;
+}
+
+.tech-typescript {
+  --chip-color: #2f76d3;
+}
+
+.tech-postgres {
+  --chip-color: #4b79bd;
+}
+
+.tech-git {
+  --chip-color: #ef6a3d;
+}
+
+.tech-swift {
+  --chip-color: #f46f37;
+}
+
+@media (min-width: 768px) {
+  .about-layout {
+    grid-template-columns: 2fr 1fr;
+    align-items: stretch;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .portfolio-bg-halo,
   .portfolio-bg-aurora,
@@ -314,6 +473,11 @@
   .portfolio-bg-icons,
   .portfolio-bg-sheen {
     animation: none;
+  }
+
+  .about-focus-panel {
+    transition: none;
+    transform: none;
   }
 
 }
